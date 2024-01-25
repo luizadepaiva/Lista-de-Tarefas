@@ -1,20 +1,7 @@
-var tarefas = [
-    {
-        mensagem: 'Aprender HTML, CSS e Javascript',
-        done: true
-    },
-    {
-        mensagem: 'Aprender o básico de Vue JS',
-        done: false
-    },
-
- ]; 
-
-
 const todosApp = {
     data() {
         return {
-            tarefas: window.tarefas,
+            tarefas: [],
             newTarefa: {
                 done: false
             }
@@ -27,6 +14,7 @@ const todosApp = {
                 this.newTarefa = {
                     done: false
                 }; 
+                window.localStorage.setItem("tarefas", this.tarefas)
             } else {
                     alert("Inserir tarefa!")
                 }
